@@ -6,7 +6,15 @@ Feature: Páros szám ellenőrzése
   # 3. Nulla ellenőrzése (0)
   # 4. Negatív páros szám ellenőrzése (-4)
   # 5. Negatív páratlan szám ellenőrzése (-5)
-  Scenario: Páros szám ellenőrzése
-    Given the number is 4
-    When I check the number 
-    Then the result should be "even"
+  
+  Scenario Outline: A szám páros vagy páratlan
+    Given the number is "<szam>"
+    When I check the number
+    Then the result should be "<answer>"
+  Examples:
+  | szam    |  answer    |
+  | 4       |  even      |
+  | 5       |  odd       |
+  | 0       |  even      |
+  | -4      |  even      |
+  | -5      |  odd       |
