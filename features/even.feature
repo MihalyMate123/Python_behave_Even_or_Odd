@@ -7,14 +7,14 @@ Feature: Páros szám ellenőrzése
   # 4. Negatív páros szám ellenőrzése (-4)
   # 5. Negatív páratlan szám ellenőrzése (-5)
   
-  Scenario Outline: A szám páros vagy páratlan
+  Scenario Outline: "<description>"
     Given the number is "<szam>"
     When I check the number
     Then the result should be "<answer>"
   Examples:
-  | szam    |  answer    |
-  | 4       |  even      |
-  | 5       |  odd       |
-  | 0       |  even      |
-  | -4      |  even      |
-  | -5      |  odd       |
+  | szam    |  answer    | description |
+  | 4       |  even      |  Páros      |
+  | 5       |  odd       |  Páratlan   |
+  | 0       |  even      |  Páros      |
+  | -4      |  even      |  Páros      |
+  | -5      |  odd       |  Páratlan   |
